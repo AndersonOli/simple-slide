@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang=pt-br>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>simple slide</title>
+        <link rel="stylesheet" href="assets/css/estilo.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <section class="slide">
+            <div class="slide-item">
+                <img src="assets/images/slide/1.jpg">
+            </div>
+
+            <div class="slide-item">
+                <img src="assets/images/slide/2.jpg">
+            </div>
+
+            <div class="slide-item">
+                <img src="assets/images/slide/3.jpg">
+            </div>
+        </section>
+    </body>
+
+    <script>
+        $(document).ready(function () {
+            $('.slide > :first').addClass('active');
+
+            function slide() {
+                var slideAtual = $('.slide > .active'),
+                    proxSlide = slideAtual.next();
+
+                if(proxSlide.length == 0){
+                    proxSlide = $('.slide > :first');
+                }
+
+                slideAtual.removeClass('active');
+                proxSlide.addClass('active');
+            }
+
+
+            setInterval(function () {
+                slide();
+            }, 1500);
+        });
+    </script>
+</html>
