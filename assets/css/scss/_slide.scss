@@ -1,0 +1,23 @@
+.slide {
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+
+    .slide-item {
+        opacity: 0;
+        width: 100%;
+        transition: .5s;
+        position: absolute;
+    }
+
+    .active {
+        opacity: 1;
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+}

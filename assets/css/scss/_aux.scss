@@ -1,0 +1,42 @@
+// classes auxiliares
+$bar: false;
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@if $bar == false {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+//mixin de imagem
+@mixin img($url, $size: cover, $pos: center, $repeat: no-repeat, $attachment: none) {
+    background-image: url(#{$url});
+    background-size: $size;
+    background-position: $pos;
+    background-repeat: $repeat;
+    background-attachment: $attachment;
+}
+
+//mixin de fonte
+//@font-face {
+//    font-family: 'homer-font';
+//    src: url("../../assets/fonte/homer-s.ttf");
+//}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+@mixin font($size: initial, $color: #fff, $type: regular, $int: 400){
+    color: $color;
+    font: {
+        size: $size;
+        weight: $int;
+        @if $type == 'regular' {
+            family: 'Montserrat', sans-serif;
+            display: swap;
+        }
+    }
+}
